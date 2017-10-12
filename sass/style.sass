@@ -1,0 +1,361 @@
+// 顏色定義
+$color_blue: #272E43
+$color_yellow: #E6AF2D
+$color_white: #EBECEB
+$color_black: #2F2F2F
+// ------------------
+*
+  font-family: 'Oswald','微軟正黑體'
+  font-size: 16px
+html,body
+  overflow-x: hidden
+  
+// ------------------
+// debug
+// html,body
+    height: 1000px
+// *
+//   border: 1px solid red
+// header,section,footer
+//   display: none
+// section#sectionContact
+//   display: block
+// ------------------
+.home_top
+  text-align: center
+  position: fixed
+  display: inline-block
+  font-size: 30px
+  color: $color_yellow
+  background-color: $color_white
+  border-radius: 5px
+  transform: scaleX(1.5)
+  z-index: 100
+  padding: 5px 7px 0px 7px
+  right: 20px
+  bottom: 20px
+  box-shadow: 2px 2px 10px rgba(black,0.4)
+  &:hover
+    text-decoration: none
+    color: lighten($color_yellow,20)
+    
+  
+nav
+  transition: 1s
+nav.navbar.navbar-default.navbar-fixed-top
+  height: 55px
+nav.navbar.navbar-default
+  a
+    box-sizing: border-box
+    color: $color_blue
+    &:hover
+      color: $color_yellow
+  a.navbar-brand
+    &:hover
+      color: lighten($color_blue,10)
+  li.active
+    border-bottom: 5px solid $color_yellow
+    
+  @media screen and (max-width: 768px)
+    background-color: #E6E7E6
+    li
+      background-color: #E6E7E6
+      &.active
+        border-bottom: none
+      a.active
+        color: $color_yellow
+nav.navbar.navbarCustom
+  background-color: transparent
+  a
+    color: $color_white
+    @media screen and (max-width: 768px)
+      color: #333
+      &.navbar-brand
+        color: $color_white
+    &:hover
+      color: $color_yellow
+  a.navbar-brand
+    color: $color_yellow
+    &:active
+      color: $color_yellow
+    &:hover
+      color: white
+
+
+.navbar-default .navbar-collapse
+  border-color: transparent
+
+      
+// ------------------
+header
+  background-color: $color_blue
+  text-align: center
+  position: relative
+  img.headerIcon
+    width: 80%
+    max-width: 250px
+    padding: 220px 0px
+  .explore
+    position: relative
+    color: $color_yellow
+    bottom: 120px
+    opacity: 0
+    transition: 1s
+    &:after
+      content: 'V'
+      display: block
+      transform: scaleX(1.5) scaleY(0.4)
+    &.atTop
+      opacity: 1
+  .margin.margin_index
+    position: absolute
+    bottom: 0px
+    right: -30px
+    animation: mountain-up 2s
+  @keyframes mountain-up
+    0%
+      bottom: -100px
+    100%
+      bottom: 0px
+    
+// ------------------
+section
+  padding: 60px 0px
+// ------------------
+section#sectionAbout
+  background-color: $color_yellow
+  position: relative
+  .container
+    transform: rotate(15deg) scale(0.8)
+  .row
+    h2
+      font-size: 4em
+    h3
+      font-size: 3em
+    h4
+      font-size: 2.5em
+    .text_r3
+      text-align: center
+    .tri
+      transform: rotate(-15deg) 
+    .tri-1
+      width: 420px
+    .tri-2
+      width: 20px
+      margin-left: 10%
+    .tri-3
+      width: 130px
+      margin-left: 60%
+    .tri-4
+      width: 70px
+      margin-left: 80%
+    .tri-5
+      width: 70px
+      margin-top: 20%
+    .btn
+      position: absolute
+      top: 30%
+      left: 20%
+      transform: rotate(10deg)
+
+    @media screen and (max-width: 768px)
+      h2
+        font-size: 3em
+      h3
+        font-size: 2em
+      h4
+        font-size: 1.5em
+      .tri-1
+        width: 350px
+        margin-top: -50px
+      .tri-2
+        margin-left: -30px
+        margin-top: -50px
+      .tri-3
+        margin-left: 300px
+        margin-top: -30px
+  .margin_about
+    // border: 3px solid blue
+    position: absolute
+    width: 60%
+    top: calc(100% - 2px)
+    // z-index: 1
+  #cat
+    width: 30%
+    position: absolute
+    right: 40px
+    bottom: -5px
+
+  #cross
+    position: absolute
+    left: 0px
+    top: 0px
+    opacity: 0
+    &:before, &:after
+      content: ' '
+      display: block
+      width: 80px
+      height: 15px
+      background-color: white
+      position: absolute
+      transform: translate(-50%,-50%)rotate(45deg)
+    &:after
+      transform: translate(-50%,-50%)rotate(-45deg)  
+    
+    
+// ------------------
+section#sectionService
+  background-color: $color_white
+  .col-sm-4
+    text-align: center
+    padding: 40px
+    color: $color_yellow
+    @media screen and (max-width: 768px)
+      padding: 20%
+      img
+        width: 100%
+      h4
+        font-size: 25px
+      
+    
+// ------------------
+section#sectionWork
+  background-color: $color_white
+  position: relative
+  .margin.margin_work
+    position: absolute
+    width: 100%
+    top: calc(100% - 20px)
+    z-index: 10
+  .works.smallWorks
+    padding-left: 10px
+    .col-sm-6
+      padding: 0px
+  .works
+    padding: 0px
+    overflow: hidden
+    .img-big
+      background-image: url(http://i.giphy.com/l2JhzQ1MmNxwcnUOY.gif)
+      width: 100%
+      height: 400px
+      background-position: center center
+      background-size: cover
+    .img-small
+      width: 100%
+      height: 200px
+      background-position: center center
+      background-size: cover
+      &.img-s1
+        background-image: url(http://www.monoame.com/projects/proj_complex/main.png)
+      &.img-s2
+        background-image: url(http://www.monoame.com/projects/proj_beauty/main.jpg)
+      &.img-s3
+        background-image: url(http://www.monoame.com/projects/proj_zashare/main.jpg)
+      &.img-s4
+        background-image: url(http://www.monoame.com/projects/proj_course/main.png)
+        
+    @media screen and (max-width: 768px)
+      .img-small
+        height: 400px
+      &.smallWorks
+        padding: 0px
+        
+  .showtext
+    cursor: pointer
+    &:before
+      content: ""
+      width: 100%
+      height: 100%
+      position: absolute
+      background-color: rgba(black,0.5)
+      transition: 0.8s
+      opacity: 0
+    &:hover
+      &:before,& .context
+        opacity: 1
+        
+    .context
+      position: absolute
+      width: 80%
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      color: $color_white
+      text-align: center
+      opacity: 0
+      transition: 0.8s
+      h4
+        font-size: 15px
+      p
+        font-size: 12px
+// ------------------
+section#sectionContact
+  background-color: $color_blue
+  padding: 100px 0px
+  position: relative
+  overflow: hidden
+  .col-sm-6.mail
+    padding-left: 50px
+    .cover  
+      position: absolute
+      transform: rotate(15deg) translate(-50px,-70px) scale(1)
+      max-width: 250px
+    .letter
+      position: relative
+      top: 0px
+      width: 90%
+      color: $color_yellow
+      background-color: $color_white
+      padding: 20px
+      h4
+        color: $color_blue
+      label
+        font-weight: normal
+      input,textarea
+        display: block
+        width: 100%
+        background-color: transparent
+        border: 3px solid $color_yellow
+        margin-bottom: 5px
+        padding: 0px 5px
+        font-weight: 300
+      textarea
+        resize: none
+        height: 150px
+      input.btn_send
+        background-color: transparent
+        color: $color_yellow
+        padding: 5px
+        font-weight: 600
+        cursor: pointer
+        &:hover
+          background-color: $color_yellow
+          color: $color_white
+  .contact
+    padding: 0px 50px
+    color: $color_white
+  .cat
+    width: 150px
+    position: absolute
+    // left: 50%
+    transform: translateX(-50%)
+    bottom: -70px
+    transition: 0.9s
+  #cat_blue
+    right: 250px
+    bottom: -70px
+  #cat_yellow
+    right: 170px
+    bottom: -70px
+  #cat_grey
+    right: 90px
+    bottom: -70px
+// ------------------
+footer#footer
+  text-align: center
+  background-color: $color_yellow
+  padding: 70px 0px
+  img
+    width: 30%
+    max-width: 250px
+// ------------------
