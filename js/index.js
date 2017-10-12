@@ -1,3 +1,21 @@
+// 作品ajax+vue.js匯入
+var dataUrl = "https://awiclass.monoame.com/api/command.php?type=get&name=projects";
+
+var vm = new Vue({
+  el: '#app',
+  data: {
+    works: [],
+  },
+  ready: function(){
+    $.ajax({
+      url: dataUrl,
+      success: function(res){
+        vm.works = JSON.parse(res);
+      }
+    })
+  }
+});
+
 // 設定nav .active位置的function
 
 function navPosition(sectionA,sectionB,navposition){

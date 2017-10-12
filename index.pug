@@ -85,36 +85,50 @@ body
           img.icon_service(src="https://awiclass.monoame.com/img/webpic/w_service_icon3.svg")
           h4 Web Development
           
+  //- section#sectionWork
+  //-   .container
+  //-     .row
+  //-       .col-sm-12
+  //-         h2 Works
+  //-     .row
+  //-       .col-sm-6.works.showtext
+  //-         .img-big
+  //-         .context
+  //-           h4 翔虹AutoCAD技術中心CIS/網站
+  //-           p 音樂工作室CIS，延展真實世界無限可能
+  //-       .col-sm-6.works.smallWorks
+  //-         .col-sm-6.showtext
+  //-           .img-small.img-s1
+  //-           .context
+  //-             h4 肆意留詩-視覺化動態詩
+  //-         .col-sm-6.showtext
+  //-           .img-small.img-s2
+  //-           .context
+  //-             h4 國際美容化妝品展
+  //-         .col-sm-6.showtext
+  //-           .img-small.img-s3
+  //-           .context
+  //-             h4 雜學校 | zashare 網頁製作
+  //-         .col-sm-6.showtext
+  //-           .img-small.img-s4
+  //-           .context
+  //-             h4 動畫互動網頁程式入門
+  //-   img.margin.margin_work(src="https://awiclass.monoame.com/img/margin/m_works.svg")
   section#sectionWork
-    .container
-      .row
+    .container#app
+      .row(v-if="works.length>0")
         .col-sm-12
           h2 Works
-      .row
-        .col-sm-6.works.showtext
-          .img-big
+        .col-sm-6.works.showtext(v-for='item in works.slice(8,9)')
+          img.img-big(v-bind:style="'background-image:url('+item.img+')'")
           .context
-            h4 翔虹AutoCAD技術中心CIS/網站
-            p 音樂工作室CIS，延展真實世界無限可能
+            h4 {{item.name}}
+            p {{item.description}}
         .col-sm-6.works.smallWorks
-          .col-sm-6.showtext
-            .img-small.img-s1
+          .col-sm-6.showtext(v-for='item in works.slice(3,7)')
+            img.img-small(v-bind:style="'background-image:url('+item.img+')'")
             .context
-              h4 肆意留詩-視覺化動態詩
-          .col-sm-6.showtext
-            .img-small.img-s2
-            .context
-              h4 國際美容化妝品展
-          .col-sm-6.showtext
-            .img-small.img-s3
-            .context
-              h4 雜學校 | zashare 網頁製作
-          .col-sm-6.showtext
-            .img-small.img-s4
-            .context
-              h4 動畫互動網頁程式入門
-    img.margin.margin_work(src="https://awiclass.monoame.com/img/margin/m_works.svg")
-    
+              h4 {{item.name}}
   section#sectionContact
     .contianer
       .row
@@ -148,5 +162,5 @@ body
 
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
-
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js')
   script(src="js/index.js")

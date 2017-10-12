@@ -79,48 +79,26 @@
     </div>
   </section>
   <section id="sectionWork">
-    <div class="container">
-      <div class="row">
+    <div class="container" id="app">
+      <div class="row" v-if="works.length&gt;0">
         <div class="col-sm-12">
           <h2>Works</h2>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 works showtext">
-          <div class="img-big"></div>
+        <div class="col-sm-6 works showtext" v-for="item in works.slice(8,9)"><img class="img-big" v-bind:style="'background-image:url('+item.img+')'">
           <div class="context">
-            <h4>翔虹AutoCAD技術中心CIS/網站</h4>
-            <p>音樂工作室CIS，延展真實世界無限可能</p>
+            <h4>{{item.name}}</h4>
+            <p>{{item.description}}</p>
           </div>
         </div>
         <div class="col-sm-6 works smallWorks">
-          <div class="col-sm-6 showtext">
-            <div class="img-small img-s1"></div>
+          <div class="col-sm-6 showtext" v-for="item in works.slice(3,7)"><img class="img-small" v-bind:style="'background-image:url('+item.img+')'">
             <div class="context">
-              <h4>肆意留詩-視覺化動態詩</h4>
-            </div>
-          </div>
-          <div class="col-sm-6 showtext">
-            <div class="img-small img-s2"></div>
-            <div class="context">
-              <h4>國際美容化妝品展</h4>
-            </div>
-          </div>
-          <div class="col-sm-6 showtext">
-            <div class="img-small img-s3"></div>
-            <div class="context">
-              <h4>雜學校 | zashare 網頁製作</h4>
-            </div>
-          </div>
-          <div class="col-sm-6 showtext">
-            <div class="img-small img-s4"></div>
-            <div class="context">
-              <h4>動畫互動網頁程式入門</h4>
+              <h4>{{item.name}}</h4>
             </div>
           </div>
         </div>
       </div>
-    </div><img class="margin margin_work" src="https://awiclass.monoame.com/img/margin/m_works.svg">
+    </div>
   </section>
   <section id="sectionContact">
     <div class="contianer">
@@ -151,5 +129,6 @@
   <footer id="footer"><img class="icon_footer" src="https://awiclass.monoame.com/img/webpic/w_icon_black.svg"></footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
   <script src="js/index.js"></script>
 </body>
